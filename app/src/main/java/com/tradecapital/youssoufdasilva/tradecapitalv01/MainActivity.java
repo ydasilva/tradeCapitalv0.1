@@ -3,6 +3,7 @@ package com.tradecapital.youssoufdasilva.tradecapitalv01;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
+import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 
@@ -19,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
     /**
      * Maintains a list of Fragments for {@link BottomNavigationView}
      */
-    private List<HomeFragment> fragments = new ArrayList<>(4);
+    private List<Fragment> fragments = new ArrayList<>(4);
 
 //    private TextView mTextMessage;
 
@@ -76,7 +77,7 @@ public class MainActivity extends AppCompatActivity {
     private void buildFragmentsList() {
         HomeFragment homeFragment = buildFragment("Homez");
         HomeFragment discoveryFragment = buildFragment("Discoveryz");
-        HomeFragment dashboardFragment = buildFragment("Dashboardz");
+        DashboardFragment dashboardFragment = buildDashboardFragment("Dashboardz");
         HomeFragment profileFragment = buildFragment("Profilez");
 
         fragments.add(homeFragment);
@@ -95,6 +96,20 @@ public class MainActivity extends AppCompatActivity {
         HomeFragment fragment = new HomeFragment();
         Bundle bundle = new Bundle();
         bundle.putString(HomeFragment.ARG_TITLE, title);
+        fragment.setArguments(bundle);
+        return fragment;
+    }
+
+    /**
+     * Creates a {@link DashboardFragment} with corresponding Item title.
+     *
+     * @param title
+     * @return
+     */
+    private DashboardFragment buildDashboardFragment(String title) {
+        DashboardFragment fragment = new DashboardFragment();
+        Bundle bundle = new Bundle();
+        bundle.putString(DashboardFragment.ARG_TITLE, title);
         fragment.setArguments(bundle);
         return fragment;
     }
