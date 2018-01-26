@@ -26,6 +26,7 @@ import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -38,6 +39,9 @@ import android.widget.TextView;
  * Provides UI for the view with Cards.
  */
 public class CardContentFragment extends Fragment {
+    private static final String TAG = "HomeFragment";
+
+    public static final String ARG_TITLE = "arg_title";
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -48,6 +52,10 @@ public class CardContentFragment extends Fragment {
         recyclerView.setAdapter(adapter);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+
+        String title = getArguments().getString(ARG_TITLE, "");
+        Log.d(TAG, "onCreate: started. Title is " + title);
+
         return recyclerView;
     }
 
@@ -64,8 +72,14 @@ public class CardContentFragment extends Fragment {
                 @Override
                 public void onClick(View v) {
                     Context context = v.getContext();
+//                    Intent intent = new Intent(context, DetailActivity.class);
+//                    intent.putExtra(DetailActivity.EXTRA_POSITION, getAdapterPosition());
+//                    context.startActivity(intent);
+
+                    // Start Detail Activity
                     Intent intent = new Intent(context, DetailActivity.class);
                     intent.putExtra(DetailActivity.EXTRA_POSITION, getAdapterPosition());
+                    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     context.startActivity(intent);
                 }
             });
@@ -94,7 +108,7 @@ public class CardContentFragment extends Fragment {
             shareImageButton.setOnClickListener(new View.OnClickListener(){
                 @Override
                 public void onClick(View v) {
-                    Snackbar.make(v, "Share article",
+                    Snackbar.make(v, "Launch comment section",
                             Snackbar.LENGTH_LONG).show();
                 }
             });
