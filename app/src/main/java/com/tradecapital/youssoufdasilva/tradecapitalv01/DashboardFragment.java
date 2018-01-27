@@ -32,7 +32,7 @@ public class DashboardFragment extends Fragment {
 
         Log.d(TAG, "onCreate: started.");
 
-        textView = rootView.findViewById(R.id.fragment_home_text);
+        textView = rootView.findViewById(R.id.fragment_dashboard_text);
 
         String title = getArguments().getString(ARG_TITLE, "");
         textView.setText(title + " Tab!");

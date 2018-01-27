@@ -72,7 +72,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void buildFragmentsList() {
         CardContentFragment homeFragment = buildCardContentFragment("Homez");
-        HomeFragment discoveryFragment = buildFragment("Discoveryz");
+        DiscoveryFragment discoveryFragment = buildDiscoveryFragmentFragment("Discoveryz");
         DashboardFragment dashboardFragment = buildDashboardFragment("Dashboardz");
         HomeFragment profileFragment = buildFragment("Profilez");
 
@@ -120,6 +120,19 @@ public class MainActivity extends AppCompatActivity {
         CardContentFragment fragment = new CardContentFragment();
         Bundle bundle = new Bundle();
         bundle.putString(CardContentFragment.ARG_TITLE, title);
+        fragment.setArguments(bundle);
+        return fragment;
+    }
+    /**
+     * Creates a {@link CardContentFragment} with corresponding Item title.
+     *
+     * @param title
+     * @return
+     */
+    private DiscoveryFragment buildDiscoveryFragmentFragment(String title) {
+        DiscoveryFragment fragment = new DiscoveryFragment();
+        Bundle bundle = new Bundle();
+        bundle.putString(DiscoveryFragment.ARG_TITLE, title);
         fragment.setArguments(bundle);
         return fragment;
     }
