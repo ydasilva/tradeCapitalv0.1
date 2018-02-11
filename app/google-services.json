@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "366399254861",
+    "firebase_url": "https://tradecapitalv01.firebaseio.com",
+    "project_id": "tradecapitalv01",
+    "storage_bucket": "tradecapitalv01.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:366399254861:android:8ac0611c1162a47d",
+        "android_client_info": {
+          "package_name": "com.tradecapital.youssoufdasilva.tradecapitalv01"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "366399254861-5487ekhoj4a5if8uug5llv4kvpfm4fc5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.tradecapital.youssoufdasilva.tradecapitalv01",
+            "certificate_hash": "766c23e2bcd7c90859f28a41af4a40639911995f"
+          }
+        },
+        {
+          "client_id": "366399254861-hacveiq1tr1tg6fd8kun8424jen6uo3a.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDDte_dFsTJSL6k_viSI0vmv3dddTTzHmI"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "366399254861-hacveiq1tr1tg6fd8kun8424jen6uo3a.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

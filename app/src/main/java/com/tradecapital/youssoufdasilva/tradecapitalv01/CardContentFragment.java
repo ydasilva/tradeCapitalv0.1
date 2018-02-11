@@ -39,7 +39,7 @@ import android.widget.TextView;
  * Provides UI for the view with Cards.
  */
 public class CardContentFragment extends Fragment {
-    private static final String TAG = "HomeFragment";
+    private static final String TAG = "CardContentFragment";
 
     public static final String ARG_TITLE = "arg_title";
 
